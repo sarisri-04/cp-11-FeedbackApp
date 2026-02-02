@@ -1,103 +1,123 @@
-/* Write your CSS code here. */
-.app-container {
-  background-image: linear-gradient(to right, #ffebeb, #ffeeee, #ffc0bb);
-  height: 100vh;
-  width: 100vw;
-  padding: 130px;
+/* Common styles */
+* {
+  box-sizing: border-box;
 }
-.feedback-container {
-  background-color: #ffffff;
-  border-radius: 10px;
-  height: 60vh;
-  width: 80vw;
+
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to right, #ffebeb, #ffeeee, #ffc0bb);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+}
+
+/* Feedback Question Screen */
+.feedback-question-container,
+.thank-you-screen-container {
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.feedback-container,
+.thank-you-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Heading */
 .heading {
   color: #0f172a;
-  font-size: 30px;
-  font-family: 'Roboto';
-  padding: 30px;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
+
+/* Emoji Section */
 .emoji-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  padding: 30px;
-}
-.emoji {
-  height: 50px;
-  width: 50px;
-}
-.thank-you-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 30px;
 }
-.heart-emoji {
-  height: 50px;
-  width: 50px;
+
+.emoji-container button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
-.thank-you-text {
-  color: #0f172a;
-  font-size: 30px;
-  font-family: 'Roboto';
+
+.emoji {
+  height: 45px;
+  width: 45px;
 }
-.description {
+
+.emoji-container {
+  margin-top: 8px;
+  font-size: 14px;
   color: #1e293b;
-  font-size: 20px;
-  font-family: 'Roboto';
 }
-@media screen and (min-width: 576px) and (max-width: 900px) {
-  /* .thank-you-container {
-    display: none;
-  } */
-  .app-container {
-    background-image: linear-gradient(to right, #ffebeb, #ffeeee, #ffc0bb);
-    height: 100vh;
-    width: 100vw;
-    padding: 130px;
+
+/* Thank You Screen */
+.heart-emoji {
+  height: 55px;
+  width: 55px;
+  margin-bottom: 20px;
+}
+
+.thank-you-text {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* Medium Devices and above */
+@media screen and (min-width: 768px) {
+  .feedback-container,
+  .thank-you-container {
+    width: 45%;
+    max-width: 600px;
+    padding: 40px;
   }
-  .feedback-container {
-    /* display: block; */
-    background-color: #ffffff;
-    border-radius: 10px;
-    height: 60vh;
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+
   .heading {
-    /* display: block; */
-    color: #0f172a;
-    font-size: 30px;
-    font-family: 'Roboto';
-    padding: 30px;
+    font-size: 22px;
+  }
+
+  .emoji {
+    height: 55px;
+    width: 55px;
   }
   .emoji-container {
-    /* display: block; */
+    list-style-type: none;
+    padding: 0;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    padding: 30px;
   }
-  .emoji {
-    /* display: block; */
-    height: 50px;
-    width: 50px;
+
+  .thank-you-text {
+    font-size: 28px;
   }
 }
-@media screen and (min-width: 768px) {
-  .feedback-container {
-    display: none;
+@media screen and (max-width: 767px) {
+  .app-container {
+    flex-direction: row;
+    gap: 20px;
   }
-  .thank-you-container {
-    display: block;
+
+  .feedback-question-container,
+  .thank-you-screen-container {
+    width: 50%;
   }
 }

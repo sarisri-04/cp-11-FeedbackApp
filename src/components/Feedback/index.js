@@ -13,26 +13,30 @@ const Feedback = props => {
 
   return (
     <div className="app-container">
-      <div className="feedback-container">
-        {!isFeedbackSubmitted ? (
-          <div className="feedback">
+      {!isFeedbackSubmitted ? (
+        <div className="feedback-question-container">
+          <div className="feedback-container">
             <h1 className="heading">
               How satisfied are you with our customer support performance?
             </h1>
-            <div className="emoji-container">
+            <ul className="emoji-container">
               {emojis.map(eachEmoji => (
-                <button key={eachEmoji.id} type="button" onClick={onClickEmoji}>
-                  <img
-                    src={eachEmoji.imageUrl}
-                    alt={eachEmoji.name}
-                    className="emoji"
-                  />
-                  <p>{eachEmoji.name}</p>
-                </button>
+                <li key={eachEmoji.id}>
+                  <button type="button" onClick={onClickEmoji}>
+                    <img
+                      src={eachEmoji.imageUrl}
+                      alt={eachEmoji.name}
+                      className="emoji"
+                    />
+                    <p>{eachEmoji.name}</p>
+                  </button>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-        ) : (
+        </div>
+      ) : (
+        <div className="thank-you-screen-container">
           <div className="thank-you-container">
             <img src={loveEmojiUrl} alt="love emoji" className="heart-emoji" />
             <h1 className="thank-you-text">Thank You!</h1>
@@ -41,8 +45,8 @@ const Feedback = props => {
               performance.
             </p>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }
